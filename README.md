@@ -3,25 +3,6 @@
 > Autonomous AI research powered by LangGraph + Groq LLaMA 3.3-70B
 > 5 specialized AI agents that collaborate to research any topic and generate a comprehensive, reviewed report -- completely free.
 
----
-
-## Table of Contents
-
-1. [Project Overview](#project-overview)
-2. [Objective](#objective)
-3. [Why This Project Matters](#why-this-project-matters)
-4. [Tech Stack](#tech-stack)
-5. [Project Structure](#project-structure)
-6. [Architecture and Agent Flow](#architecture-and-agent-flow)
-7. [Agent Descriptions](#agent-descriptions)
-8. [File-by-File Explanation](#file-by-file-explanation)
-9. [Setup and Installation](#setup-and-installation)
-10. [How to Run](#how-to-run)
-11. [Example Output](#example-output)
-12. [Configuration Guide](#configuration-guide)
-13. [Portfolio Value](#portfolio-value)
-
----
 
 ## Project Overview
 
@@ -52,28 +33,8 @@ The primary objectives of this project are:
 
 ---
 
-## Why This Project Matters
 
-### For AI/ML/DS Job Applications:
 
-| Skill Demonstrated | How |
-|---|---|
-| Multi-Agent Systems | 5 agents with distinct roles, coordinated by LangGraph |
-| LangGraph | Industry-standard agent orchestration (hot skill in 2024-2025) |
-| RAG-Adjacent Architecture | Retrieve (search) -> Augment (summarize) -> Generate (write) |
-| Prompt Engineering | Carefully crafted prompts for each agent's specific role |
-| LLM Integration | Groq API with LangChain, proper error handling |
-| Tool Use | Agents use real external tools (web search, Wikipedia) |
-| Production Patterns | Config management, error handling, fallbacks, logging |
-| Python Best Practices | Type hints, docstrings, modular design, separation of concerns |
-| Web Application | Full Streamlit UI with session state, tabs, download |
-
-### Complements Your RAG Project:
-- RAG project -> "I can build retrieval-augmented generation systems"
-- This project -> "I can build autonomous multi-agent pipelines"
-- Together -> "I understand the full spectrum of modern LLM application patterns"
-
----
 
 ## Tech Stack
 
@@ -677,34 +638,4 @@ output:
   include_review: true
 ```
 
----
 
-## Portfolio Value
-
-This project demonstrates the following skills that are highly valued in AI/ML/DS roles:
-
-### Technical Skills:
-- LangGraph -- The #1 framework for multi-agent systems (2024-2025)
-- Multi-Agent Architecture -- Designing specialized agents with clear responsibilities
-- LLM Prompt Engineering -- Crafting effective prompts for different tasks
-- Tool Use / Function Calling -- Agents using real external tools
-- RAG Pattern -- Retrieve -> Augment -> Generate
-- State Management -- TypedDict state flowing through a pipeline
-- Error Handling -- Graceful fallbacks at every level
-- Configuration Management -- YAML-based config with validation
-
-### Software Engineering Skills:
-- Modular Design -- Clean separation of concerns (agents, tools, utils, graph)
-- Type Hints -- Full typing throughout the codebase
-- Documentation -- Comprehensive docstrings and comments
-- Web Application -- Full Streamlit UI with professional UX
-
-### AI/ML Concepts:
-- Autonomous Agents -- Agents that make decisions and use tools
-- Self-Reflection -- Critic agent evaluates its own pipeline's output
-- Grounded Generation -- Using real data to prevent hallucination
-- Pipeline Orchestration -- Managing complex multi-step AI workflows
-
----
-
-Built with LangGraph + Groq + Streamlit -- all free resources

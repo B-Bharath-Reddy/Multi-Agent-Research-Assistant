@@ -1,0 +1,98 @@
+# ============================================================
+# .gitignore
+# ============================================================
+# PURPOSE:
+#   Exclude sensitive files and unnecessary files from Git.
+#   This ensures API keys are never committed and keeps the
+#   repository clean.
+# ============================================================
+
+# ------------------------------------------------------------
+# SENSITIVE FILES - NEVER COMMIT THESE
+# ------------------------------------------------------------
+# config.yaml contains your Groq API key - NEVER commit it!
+config.yaml
+
+# ------------------------------------------------------------
+# PYTHON
+# ------------------------------------------------------------
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ------------------------------------------------------------
+# GENERATED OUTPUT
+# ------------------------------------------------------------
+# Generated research reports
+reports/
+
+# ------------------------------------------------------------
+# IDE / EDITOR
+# ------------------------------------------------------------
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Vim
+*.swp
+*.swo
+
+# ------------------------------------------------------------
+# OS FILES
+# ------------------------------------------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# ------------------------------------------------------------
+# LOGS
+# ------------------------------------------------------------
+*.log
+logs/
+
+# ------------------------------------------------------------
+# MISC
+# ------------------------------------------------------------
+# Environment variables
+.env
+.env.local

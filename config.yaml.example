@@ -1,0 +1,135 @@
+# ============================================================
+# Multi-Agent Research Assistant - Configuration Template
+# ============================================================
+# INSTRUCTIONS:
+#   1. Copy this file and rename it to 'config.yaml'
+#   2. Replace 'your_groq_api_key_here' with your actual Groq API key
+#   3. Get your free API key at: https://console.groq.com
+# ============================================================
+
+# ------------------------------------------------------------
+# API KEYS
+# ------------------------------------------------------------
+# Your Groq API key. Get it free at: https://console.groq.com
+# Groq provides free, ultra-fast inference for LLaMA models.
+api:
+  groq_api_key: "your_groq_api_key_here"   # <-- PASTE YOUR GROQ API KEY HERE
+
+# ------------------------------------------------------------
+# LLM (Large Language Model) Settings
+# ------------------------------------------------------------
+# These settings control how the AI model behaves.
+# All agents share the same LLM instance configured here.
+llm:
+  # Model to use from Groq. Options:
+  #   - "llama-3.3-70b-versatile"   → Best quality, recommended
+  #   - "llama-3.1-8b-instant"      → Faster, lighter
+  #   - "mixtral-8x7b-32768"        → Good for long contexts
+  model: "llama-3.3-70b-versatile"
+
+  # Temperature controls creativity vs. factuality (0.0 to 1.0)
+  # Lower = more factual/deterministic (good for research)
+  # Higher = more creative/varied
+  temperature: 0.3
+
+  # Maximum number of tokens the LLM can generate per response
+  # 2048 is good for detailed summaries and reports
+  max_tokens: 2048
+
+# ------------------------------------------------------------
+# Search Tool Settings
+# ------------------------------------------------------------
+# Controls how the Search Agent fetches information from the web.
+search:
+  # Number of DuckDuckGo search results to fetch per sub-question
+  # More results = more comprehensive but slower
+  max_results: 3
+
+  # Number of sentences to extract from Wikipedia per topic
+  # Wikipedia gives clean, factual summaries
+  wikipedia_sentences: 5
+
+  # Timeout in seconds for web requests
+  request_timeout: 10
+
+# ------------------------------------------------------------
+# Agent-Specific Settings
+# ------------------------------------------------------------
+# Fine-tune the behavior of each individual agent.
+agents:
+
+  planner:
+    # How many sub-questions the Planner Agent should generate
+    # from the user's research topic. More = more comprehensive.
+    num_subquestions: 5
+
+  search:
+    # Whether to also search Wikipedia in addition to DuckDuckGo
+    use_wikipedia: true
+
+  summarizer:
+    # Maximum length of each sub-topic summary (in words, approximate)
+    max_summary_length: 150
+
+  writer:
+    # Sections to include in the final research report
+    report_sections:
+      - "Introduction"
+      - "Key Findings"
+      - "Detailed Analysis"
+      - "Current Trends"
+      - "Challenges and Limitations"
+      - "Future Outlook"
+      - "Conclusion"
+
+  critic:
+    # Minimum acceptable quality score (out of 10) for the report
+    # If score is below this, the critic will flag it prominently
+    min_score_threshold: 6
+
+    # Criteria the critic evaluates the report on
+    evaluation_criteria:
+      - "Accuracy and factual correctness"
+      - "Completeness of coverage"
+      - "Clarity and readability"
+      - "Logical structure and flow"
+      - "Use of evidence and sources"
+
+# ------------------------------------------------------------
+# Output Settings
+# ------------------------------------------------------------
+# Controls how and where the final reports are saved.
+output:
+  # Whether to automatically save generated reports to disk
+  save_reports: true
+
+  # Directory where reports will be saved
+  output_dir: "reports/"
+
+  # Format of saved reports: "markdown" or "text"
+  report_format: "markdown"
+
+  # Whether to include the critic's review in the saved report
+  include_review: true
+
+# ------------------------------------------------------------
+# Streamlit App Settings
+# ------------------------------------------------------------
+# Controls the appearance and behavior of the web UI.
+app:
+  title: "🔬 Multi-Agent Research Assistant"
+  description: "Autonomous AI research powered by LangGraph + Groq LLaMA"
+  
+  # Example topics shown to the user in the UI
+  example_topics:
+    - "Impact of Artificial Intelligence on Healthcare"
+    - "Quantum Computing: Current State and Future"
+    - "Climate Change Solutions and Technologies"
+    - "Blockchain Technology in Finance"
+    - "The Future of Electric Vehicles"
+
+  # Whether to show the agent status/progress in real-time
+  show_agent_progress: true
+
+  # Whether to show intermediate results (search results, summaries)
+  show_intermediate_results: true

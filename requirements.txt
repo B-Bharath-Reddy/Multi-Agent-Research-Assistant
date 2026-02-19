@@ -1,0 +1,88 @@
+# ============================================================
+# requirements.txt
+# ============================================================
+# PURPOSE:
+#   This file lists ALL Python packages required to run the
+#   Multi-Agent Research Assistant. Install everything with:
+#
+#     pip install -r requirements.txt
+#
+# WHY EACH PACKAGE IS NEEDED:
+#   See comments next to each package below.
+#
+# ALL PACKAGES ARE FREE — no paid subscriptions required.
+# The only external service needed is a free Groq API key.
+# Get yours at: https://console.groq.com
+# ============================================================
+
+# ------------------------------------------------------------
+# CORE AI / LLM FRAMEWORK
+# ------------------------------------------------------------
+
+# LangChain: The foundational framework for building LLM applications.
+# Provides abstractions for messages, prompts, chains, and agents.
+# We use it for ChatGroq (the Groq LLM wrapper) and message types.
+langchain>=0.3.0
+
+# LangChain Groq integration: Connects LangChain to the Groq API.
+# Provides the ChatGroq class used in all 5 agents.
+# Groq offers FREE, ultra-fast inference for LLaMA models.
+langchain-groq>=0.2.0
+
+# LangChain Core: The base abstractions used by all LangChain packages.
+# Provides HumanMessage, SystemMessage, and other core types.
+langchain-core>=0.3.0
+
+# LangGraph: The agent orchestration framework.
+# Used in graph/research_graph.py to build the multi-agent pipeline.
+# Provides StateGraph, START, END for defining agent workflows.
+# This is the KEY differentiator of this project — LangGraph is
+# the industry-standard tool for multi-agent systems in 2024-2025.
+langgraph>=0.2.0
+
+# ------------------------------------------------------------
+# WEB SEARCH (FREE — NO API KEY REQUIRED)
+# ------------------------------------------------------------
+
+# DuckDuckGo Search: Free web search library.
+# Used in tools/web_search.py to fetch real-time web results.
+# No API key needed — completely free for reasonable usage.
+# Privacy-focused search engine with no tracking.
+duckduckgo-search>=6.0.0
+
+# ------------------------------------------------------------
+# WIKIPEDIA SEARCH (FREE — NO API KEY REQUIRED)
+# ------------------------------------------------------------
+
+# Wikipedia: Python library for searching and fetching Wikipedia articles.
+# Used in tools/wikipedia_tool.py to get authoritative encyclopedic content.
+# Completely free — no API key or account needed.
+wikipedia>=1.4.0
+
+# ------------------------------------------------------------
+# WEB UI
+# ------------------------------------------------------------
+
+# Streamlit: The web application framework for the UI.
+# Used in app.py to create the interactive research assistant interface.
+# Completely free — can also be deployed to Streamlit Cloud for free.
+# Renders Markdown beautifully, perfect for displaying research reports.
+streamlit>=1.39.0
+
+# ------------------------------------------------------------
+# CONFIGURATION
+# ------------------------------------------------------------
+
+# PyYAML: YAML file parser.
+# Used in utils/config_loader.py to read config.yaml.
+# config.yaml is the master configuration file for the entire project.
+PyYAML>=6.0.0
+
+# ------------------------------------------------------------
+# STANDARD LIBRARY (already included with Python — listed for clarity)
+# ------------------------------------------------------------
+# These are built-in Python modules — no installation needed:
+#   - typing: Type hints (List, Dict, Any, Optional, TypedDict)
+#   - os: File path operations
+#   - datetime: Timestamps for report filenames
+#   - re: Regular expressions (used in critic_agent.py for parsing)
